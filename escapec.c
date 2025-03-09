@@ -6,8 +6,8 @@
 #define program_name escapec
 
 int print_usage(const char *program) {
-  char help[1024] = {0};
-  sprintf(help,
+
+  fprintf(stderr,
           "Usage: %s [OPTIONS] [FILE]\n"
           "Escapes text so that it can be used for string literals (C / C++).\n"
           "Options:\n"
@@ -18,8 +18,6 @@ int print_usage(const char *program) {
           "  -h, --help            Display this help message.\n"
           "\nIf FILE is not specified, data is read from standard input.\n",
           program);
-
-  fprintf(stderr, "%s", help);
 
   return 0;
 }
